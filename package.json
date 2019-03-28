@@ -1,0 +1,19 @@
+{
+  "name": "eco-upeu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js" 
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.19"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}

@@ -1,0 +1,33 @@
+nav, .page-footer {
+    background-color: #992e45;
+}
+
+.input-name {
+    margin-top: 10%
+}
+
+#name {
+    font-size: 25px;
+}
+
+.btn {
+    margin-left: 42%;
+    margin-bottom: 10%;
+}
+
+.parallax {
+    opacity: 1;
+}
+
+.parallax-container {
+    height: 300px;
+}
+
+.input-field input:focus + label {
+    color: #992e45 !important;
+  }
+  /* label underline focus color */
+  .row .input-field input:focus {
+    border-bottom: 1px solid #992e45 !important;
+    box-shadow: 0 1px 0 0 #992e45 !important
+  }

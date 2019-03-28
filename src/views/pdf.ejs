@@ -1,0 +1,63 @@
+<% include partials/_header%>
+
+<main>
+    <div class="section white">
+        <div class="row">
+            <div class="col s4">
+                <ul class="collapsible">                          
+                    <% for(let i = 0; i < persons.length; i++) { %>                                                  
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">book</i><%= persons[i].eco %></div>
+                        <div class="collapsible-body" onclick="ver(this)">
+                            <span class="hide"><%= persons[i].eco %></span>
+                            <span class="left"><%= persons[i].nombres %></span>
+                            <span class="right"><%= persons[i].pagina %></span>                            
+                        </div>
+                    </li>                                        
+                    <% } %>    
+                </ul>                
+            </div>
+
+            <div class="col s8">
+                <iframe id="viewer" style="display: none" frameborder="0" width="100%" height="800" allowfullscreen
+                    webkitallowfulscreen></iframe>
+            </div>
+            
+            
+            <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2"></script>
+                                  
+            <div class="fb-share-button" data-href="https://centenario.upeu.edu.pe/" data-layout="button" data-size="large">
+                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a>
+            </div>
+
+            <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2"></script>
+
+            <div class="fb-post" data-href="https://www.facebook.com/jhondeyner.catacoratupa.7/posts/2072901602838611" data-width="500" data-show-text="true"><blockquote cite="https://developers.facebook.com/jhondeyner.catacoratupa.7/posts/2072901602838611" class="fb-xfbml-parse-ignore">Publicado por <a href="https://www.facebook.com/jhondeyner.catacoratupa.7">Jhon Catacora Tupa</a> en&nbsp;<a href="https://developers.facebook.com/jhondeyner.catacoratupa.7/posts/2072901602838611">Lunes, 18 de marzo de 2019</a></blockquote></div>
+        </div>
+    </div>
+</main>
+
+<script>
+    function ver(p){        
+        let page = p.childNodes[5].innerHTML;        
+        let eco = p.childNodes[1].innerHTML;                
+
+        document.getElementById('viewer').style.display = 'block';
+        document.getElementById('viewer').src = `layouts/pdfjs/web/viewer.html?file=pdf/${eco}.pdf#zoom=80&page=${page}`;
+    }
+
+/*
+    var groupBy = function (array, prop) {
+                                return array.reduce(function (groups, item){
+                                    var val = item[prop];
+                                    groups[val] = groups[val] || {nombres: item.nombres, pagina: item.pagina, eco: item.eco};
+                                    return groups;
+                                }, {});
+                            }
+                            
+                            console.log(groupBy(persons, 'eco'));*/
+</script>
+
+<% include partials/_footer%>
