@@ -1,0 +1,19 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+  },
+  "formation": {
+  },
+  "name": "ECO-UPeU",
+  "scripts": {
+    "postdeploy": "node src/app.js"
+  },
+  "stack": "heroku-18"
+}
